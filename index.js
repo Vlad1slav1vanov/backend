@@ -9,8 +9,9 @@ const DB_URL = 'mongodb+srv://typlomi:72ipinip@cluster0.3nz8cjz.mongodb.net/?ret
 const app = express();
 
 app.use(express.json())
-app.use('/api', router)
+app.use(express.static('static'))
 app.use(fileUpload({}))
+app.use('/api', router)
 
 async function startApp() {
   try {
